@@ -1,5 +1,14 @@
 from os import system
 
+# Imprime un mesaje que recibe por parametros dentro de 2 print que genera una especie de bloque 
+def imprimir (parametro_1:str, parametro_2="")->None:
+
+    print(f"\n{"*"*115}")
+    print(f"\n{parametro_1} {parametro_2}")
+    print(f"\n{"*"*115}")
+
+
+
 
 # muestra un mensaje dependiendo la opcion que recibe por parametros(int)
 def mensaje_programa(numero:int)->None:
