@@ -9,9 +9,7 @@ def menu(path):
     mensaje_comienzo(1)
     mensaje_comienzo(0)
     lista = convertir_csv_lista(path)
-    print(lista)
     lista = normalizar_datos(lista)
-    print(lista)
     flag = False
     running = True
 
@@ -19,19 +17,33 @@ def menu(path):
         mensaje_programa(1)
         select = input("Ingrese una opcion A, B, C, D, X : ").upper()
         if select == "A":
+
             lista = ingresar_datos(lista)
             flag = True
-        elif select == "B": #and flag == True:
+
+        elif select == "B" and flag == True:
+
             lista_encontrados = buscar_claves(lista,"Genero", "MASCULINO")
             lista_encontrados = buscar_claves(lista_encontrados, "Tecnologia", "IA", "IOT")
-            lista_encontrados = buscar_claves_rangos(lista_encontrados, "Edad", 24, 50)
-            imprimir(f"Cantidad de empleados masculinos que votaron por IOT, IA es : {len(lista_encontrados)}")
+            lista_encontrados = buscar_claves_rangos(lista_encontrados, "Edad", 24, 51)
+            imprimir(f"Cantidad de empleados masculinos que votaron por IOT, IA y edad entre 25 y 50 años es : {len(lista_encontrados)}")
 
         elif select == "C" and flag == True:
-            pass
+
+            lista_busqueda =  buscar_claves(lista, "Genero", "MASCULINO", "OTRO")
+            lista_busqueda =  buscar_claves(lista_busqueda, "Tecnologia", "RV", "IOT")
+            lista_busqueda =  buscar_claves_rangos(lista_busqueda, "Edad", 32, 41)
+            porcentaje = len(lista_busqueda) / len(lista) * 100
+            imprimir(f"Porcentaje de empleados genero Otro, Masculino que votaron por IOT, RV es : {round(porcentaje)} %")
+
         elif select == "D" and flag == True:
-            pass
+
+            lista_busqued = buscar_claves(lista,"Genero", "MASCULINO")
+            dicc_mayor = buscar_mayor(lista_busqued, "Edad")
+            imprimir(f"El nombre: {dicc_mayor["Nombre"]}, Edad: {dicc_mayor["Edad"]}, Tecnologia: {dicc_mayor["Tecnologia"]}")
+
         elif select == "X":
+
             convertir_lista_csv(lista, path)
             mensaje_programa(3)
             break

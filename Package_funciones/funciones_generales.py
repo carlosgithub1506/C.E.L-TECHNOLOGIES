@@ -28,8 +28,8 @@ def ingresar_datos(lista:list[dict])->list[dict]:
             valor = get_str_tipo(mensaje, lista_tipos)
 
         elif clave == "Tecnologia":
-            mensaje = "Ingrese tecnologia  (IA, RV,RA, IOT): "
-            lista_tipos = ["IA","RV","RA","IOT"]
+            mensaje = "Ingrese tecnologia  (IA, RV, IOT): "
+            lista_tipos = ["IA","RV","IOT"]
             valor = get_str_tipo(mensaje, lista_tipos)
 
         if valor != False:
@@ -69,3 +69,12 @@ def normalizar_datos(lista:list[dict])->list:
             if valor.isdigit() == True:
                 dicc[clave] = int(valor)
     return lista
+
+def buscar_mayor(lista:list[dict], clave:str)->dict:
+    flag_2 = True
+    dicc_mayor = None
+    for diccionario in lista:
+        if flag_2 == True or diccionario[clave] > dicc_mayor[clave]:
+            dicc_mayor = diccionario 
+            flag_2 = False
+    return dicc_mayor

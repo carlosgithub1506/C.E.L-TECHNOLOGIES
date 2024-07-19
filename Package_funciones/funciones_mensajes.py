@@ -15,7 +15,7 @@ def mensaje_programa(numero:int)->None:
    
     mensaje=""
     if numero == 1:    
-        mensaje = f"\n{"*"*53}  Menu  {"*"*54}\n\nA) Realizar encuesta.\nB) Cantidad de empleados de género masculino que votaron por IOT o IA, entre 25 y 50 años\nC)Porcentaje de empleados que no votaron por IA,\n que su género no sea Femenino o su edad se encuentre entre los 33 y 40 años\nD)Nombre y tecnología que votó, de los empleados de género masculino con mayor edad de ese género.\nX)  Salir.\n\n{"*"*115} \n"
+        mensaje = f"\n{"*"*53}  Menu  {"*"*54}\n\nA) Realizar encuesta.\nB) Cantidad de empleados de género masculino que votaron por IOT o IA, entre 25 y 50 años\nC) Porcentaje de empleados que no votaron por IA, no Femenino, edad entre los 33 y 40 años\nD) Nombre y tecnología que votó, de género masculino con mayor edad de ese género.\nX) Salir.\n\n{"*"*115} \n"
     elif numero == 2:
         mensaje = "*** Debe ingresar los datos solicitado en la opcion `A` ***"    
     elif numero == 3:
