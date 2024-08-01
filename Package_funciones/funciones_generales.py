@@ -78,3 +78,82 @@ def buscar_mayor(lista:list[dict], clave:str)->dict:
             dicc_mayor = diccionario 
             flag_2 = False
     return dicc_mayor
+
+
+
+# obtener_claves_dict: Recibe un diccionario y retorna una lista con las claves de un diccionario | bool
+def obtener_claves_dict(diccionario:dict)->list|bool:
+    retorno = False
+    if type(diccionario) == dict: 
+        lista_claves = list(diccionario.keys())
+        retorno = lista_claves
+    return retorno
+
+
+# obtener_valores_dict recibe un diccionario y retorna una lista con los valores de un diccionario | bool
+def obtener_valores_dict(diccionario:dict)->list | bool:
+    retorno = False
+    if type(diccionario) == dict: 
+        lista_valores = list(diccionario.values())
+        retorno = lista_valores
+    return retorno
+
+
+
+
+# convertir_a_str: recibe una lista, convierte  cada elemento de la lista a str, lo concadena y da formato a una variable que luego retorna | puede retorna un string con un caracter repetidos 115 veces 
+def convertir_a_str(lista:list,caracter="*")->str:
+
+    string = f"{caracter*115}\n"
+    separador = " | "
+
+    if type(lista) == list:
+        for elemento in lista:
+            elemento = str(elemento)
+            if len(elemento) < 1:
+                string += f"{separador}{elemento:<3}"
+
+            elif len(elemento) >3  and len(elemento)< 10:
+                string += f"{separador}{elemento:<10}"
+
+            else:
+                string += f"{separador}{elemento:<12}"
+
+        string += f"{separador}"
+    return string 
+
+
+
+# mostrar_paciente: recibe un diccionario y un booleano segun el estado del booleano va hacer el formato que se va a mostrar, hace uso de otras funciones para dar formato
+def mostrar_diccinario(empleado:dict, mostrar_un_elemento:bool) ->None:
+    
+    mensaje = "hubo un error"
+
+    if type(empleado) == dict:
+        lista_valores = obtener_valores_dict(empleado)
+        string_valores = convertir_a_str(lista_valores,"-")
+        mensaje = string_valores
+
+        if  mostrar_un_elemento:
+            lista_claves = obtener_claves_dict(empleado)
+            string_claves = convertir_a_str(lista_claves)
+            base_tabla=convertir_a_str(False)     
+            mensaje=f"{string_claves}\n{string_valores}\n{base_tabla}"
+
+    print(mensaje)
+
+
+# mostrar_lista_paciente recibe una lista de diccionario la recorrre y muestra todos los elementos en formato de tabla, hace usos de otras funciones para obtener claves de un diccionario y formatear y mostrar
+def mostrar_lista_diccionario(lista:list[dict])->None:
+
+    if type(lista) == list and  len(lista) > 0:
+        lista_claves = obtener_claves_dict(lista[0])
+        string_claves = convertir_a_str(lista_claves)
+        print(string_claves)
+
+        for empleado in lista:
+            mostrar_diccinario(empleado,False)
+        base_tabla=convertir_a_str(False)                
+        print(base_tabla)
+
+

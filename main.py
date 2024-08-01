@@ -36,11 +36,15 @@ def menu(path):
             porcentaje = len(lista_busqueda) / len(lista) * 100
             imprimir(f"Porcentaje de empleados genero Otro, Masculino que votaron por IOT, RV es : {round(porcentaje)} %")
 
-        elif select == "D" and flag == True:
+        elif select == "D" :#and flag == True:
 
             lista_busqued = buscar_claves(lista,"Genero", "MASCULINO")
             dicc_mayor = buscar_mayor(lista_busqued, "Edad")
-            imprimir(f"El nombre: {dicc_mayor["Nombre"]}, Edad: {dicc_mayor["Edad"]}, Tecnologia: {dicc_mayor["Tecnologia"]}")
+            mostrar_diccinario(dicc_mayor, True)
+
+        elif select == "E" and flag == True:
+            
+            mostrar_lista_diccionario(lista)
 
         elif select == "X":
 
