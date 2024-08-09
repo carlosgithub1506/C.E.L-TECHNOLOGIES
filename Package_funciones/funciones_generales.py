@@ -1,4 +1,5 @@
 from Package_get_validate.funciones_get import *
+from Package_funciones.funciones_mensajes import *
 
 def crear_empleado(lista_claves:list, lista_valores:list)->dict:
     diccionario = {}
@@ -157,3 +158,131 @@ def mostrar_lista_diccionario(lista:list[dict])->None:
         print(base_tabla)
 
 
+def elegir_clave()->bool|str:
+
+    retorno = False 
+    clave = ""
+    while True:
+            
+        mensaje_in = f"A) Filtrar por Edad.\nB) Filtrar por Genero.\nC) Filtrar por Tecnologia.\nX) Salir.: "
+        print("*"*115)
+        select_2 = input(mensaje_in).upper()
+        if select_2 == "A":
+            clave = "Edad"
+            retorno = clave
+            break   
+
+        elif select_2 == "B":
+            clave = "Genero"
+            retorno = clave
+            break   
+        elif select_2 == "C":
+            clave = "Tecnologia" 
+            retorno = clave
+            break   
+        elif select_2 == "X":
+            mensaje_programa(8) 
+            break   
+        else:
+            mensaje_programa(0) 
+    return retorno
+
+
+def elegir_valor(clave: str):
+    lista_valores = []
+    retorno = False 
+    contador = 2
+    while True:
+        if clave == "Edad":
+
+            mensaje = f"Ingrese una {clave} entre 18 y 100 años: "
+            valor = get_int(mensaje)
+            if valor != False:
+                lista_valores.append(valor)
+            else:
+                imprimir("valor no valido")
+
+        elif clave == "Genero":
+
+            lista_genero = ["MASCULINO", "FEMENINO", "OTRO"]
+            mensaje = f"Ingrese un {clave}  Masculino/Femenino/Otro: "
+            valor = get_str_tipo(mensaje, lista_genero)
+            if valor != False:
+                lista_valores.append(valor)
+            else:
+                imprimir("valor no valido")
+
+        elif clave == "Tecnologia":
+
+            lista_tecnologia = ["IA", "RV", "IOT"]
+            mensaje = f"Ingrese una {clave} IA/RV/IOT: "
+            valor = get_str_tipo(mensaje, lista_tecnologia)    
+            if valor != False:
+                lista_valores.append(valor)
+            else:
+                imprimir("valor no valido")
+
+        seguir = input(f"Desea Ingresar otra {clave} SI/NO: ").upper()
+        if seguir == "NO" or contador == 0:
+            retorno = lista_valores
+            break
+        contador -= 1
+
+    return retorno
+
+
+
+
+# desplega un menu con diferentes opciones para ordenar una lista de diccionarios. retorna una lista
+def mostrar_menu_ordenar(lista: list[dict])->list:
+    retorno = lista
+    lista_filtrada = ""
+    if len(lista) > 0:
+        clave = None
+        lista_valor = None
+        seguir = None
+        while True:
+            clave = elegir_clave()
+            if clave != False:  
+                lista_valor = elegir_valor(clave)
+            else:
+                imprimir("Hubo un error")
+
+            if clave == "Edad" and lista_valor != False:
+                if len(lista_valor) < 2:
+                    auxiliar = 100
+                    lista_valor.append(auxiliar)
+                if seguir == "si":
+                    
+                    lista_filtrada = buscar_claves_rangos(lista_filtrada, clave, lista_valor[0], lista_valor[1])
+                else:
+                    lista_filtrada = buscar_claves_rangos(lista, clave, lista_valor[0], lista_valor[1])
+
+            elif clave == "Genero" and lista_valor != False:
+                if len(lista_valor) < 2:
+                    auxiliar = ""
+                    lista_valor.append(auxiliar)
+                if seguir == "si":
+                    
+                    lista_filtrada = buscar_claves(lista_filtrada, clave, lista_valor[0], lista_valor[1])
+                else:
+                    lista_filtrada = buscar_claves(lista, clave, lista_valor[0], lista_valor[1])
+
+            elif clave == "Tecnologia" and lista_valor != False:
+                if len(lista_valor) < 2:
+                    auxiliar = ""
+                    lista_valor.append(auxiliar)
+                if seguir == "si":
+                    lista_filtrada = buscar_claves(lista_filtrada, clave, lista_valor[0], lista_valor[1])
+                else:
+                    lista_filtrada = buscar_claves(lista, clave, lista_valor[0], lista_valor[1])
+
+            seguir = input("Desea seguir filtrando la busquedad. SI/NO: " ).lower()
+            while seguir != "no" and seguir != "si":
+                seguir = input("Desea seguir filtrando la busquedad. SI/NO: " ).lower()
+            if seguir == "no":
+                retorno = lista_filtrada
+                break
+    system("pause")         
+    system("cls")
+    return retorno     
