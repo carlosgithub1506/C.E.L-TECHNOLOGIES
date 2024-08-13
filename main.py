@@ -33,7 +33,7 @@ def menu(path):
             porcentaje = len(lista_filtrada) / len(lista) * 100
             imprimir(f"Porcentaje de empleados es : {round(porcentaje)} %")
 
-        elif select == "D" :#and flag == True:
+        elif select == "D" and flag == True:
             lista_filtrada = mostrar_menu_ordenar(lista)
             dicc_mayor = buscar_mayor(lista_filtrada, "Edad")
             mostrar_diccinario(dicc_mayor, True)
