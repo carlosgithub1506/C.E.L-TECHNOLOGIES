@@ -1,6 +1,8 @@
-# C. E. L - TECHNOLOGY
+
 
 ![logo](Image_md/logo_ancho.png)
+
+### C. E. L - TECHNOLOGY
 
 ### Realizado por:
 - Carlos Lopez 
