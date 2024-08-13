@@ -2,7 +2,7 @@
 
 ![logo](Image_md/logo_ancho.png)
 
-### C- E- L - TECHNOLOGY
+### C - E - L    TECHNOLOGY
 
 ### Realizado por:
 - Carlos Lopez 
