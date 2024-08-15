@@ -15,7 +15,9 @@ def menu(path):
 
     while running:
         mensaje_programa(1)
-        select = input("Ingrese una opcion A, B, C, D, X : ").upper()
+        select = input("Ingrese una opcion A, B, C, D, E, X : ").upper()
+        print(f"\n{"*"*115}\n")
+
         if select == "A":
 
             lista = ingresar_datos(lista)

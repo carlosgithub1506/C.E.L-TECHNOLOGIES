@@ -40,7 +40,7 @@ def mensaje_comienzo(numero:int)->None:
     mensaje=""
 
     if numero == 1:
-        mensaje=f"Bienvenido a la encuesta de empleados de C.E.L TECHNOLOGIES\n"  
+        mensaje=f"Bienvenido a la encuesta de empleados de C.E.L TECHNOLOGY\n"  
     else:
         mensaje=f"Ingresando al Sistema. . . .\n"
 

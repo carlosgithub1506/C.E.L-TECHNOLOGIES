@@ -1,6 +1,6 @@
 
 
-![logo](Image_md/logo_ancho.png)
+![logo](Image_md/logo.png)
 
 ### C - E - L    TECHNOLOGY
 
@@ -27,11 +27,41 @@ Desplega un menú de opciones para que el usuario pueda realizar las siguientes 
  
 los datos iniciales los lee de un archivo csv que luego se parsea a una lista de diccionarios y que posteriormente se normalizan cada valor al tipo de dato correcto .
 
+![imagen del menu](Image_md/img_menu.png)
 ![imagen del menu](Image_md/funcion_menu_cel.png)
 
+
+## Descripción de cada opcion {A, B, C, D, E} del menú principal
+
+- ### Funcion ingresar datos ( Opcion A ) : 
+    Esta  funcion permite ingresar los datos por terminal haciendo uso de otras funciones get que solicitan el dato, funciones que validan el tipo de dato, y una funcion que creea un diccionario.
+    
+    ![imagen del programa](Image_md/ingreso_datos.png)
+    ![imagen del codigo]( )
+
+- ### Funciones para filtra ( Opcion B, C, D ) :
+    Esta funcion permite seleccionar filtros por el usuarios y genera una busqueda por los filtros elegidos. Dependiendo la opcion seleccionada en el menu principal se puede obtener la cantidad, porcentaje y el empleado de mayor edad.
+
+    ![imagen del ingreso de dato](Image_md/filtrado_porcentaje.png)
+
+    Se muestra el resultado de la busqueda
+
+    ![imagen del resultado de la busqueda](Image_md/filtradoPorcentaje.png)
+
+- ### Mostrar todos los empleados ( Opcion E ):
+    Muestra los todos los encuestados en formato de tabla.
+
+    ![imagen de la tabla](Image_md/mostrar_tabla.png)
+    ![imagen del codigo]()
+- ###
+- ###
+- ###
 
 ## Link del proyecto
 - [Proyecto](https://github.com/carlosgithub1506/C.E.L-TECHNOLOGIES)
 
 ## Link del video
 - [Video](---)
+
+## Contacto
+- Correo electronico carlospez.28@gmail.com

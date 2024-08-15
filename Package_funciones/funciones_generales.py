@@ -42,6 +42,7 @@ def ingresar_datos(lista:list[dict])->list[dict]:
     if len(lista_valores) == len(lista_claves):
         diccionario = crear_empleado(lista_claves, lista_valores)
         lista.append(diccionario)
+        imprimir("Datos ingresado correctamente")
 
     return lista
 

@@ -18,6 +18,7 @@ def get_str(mensaje_input:str)->str|bool:
 
         if validacion == True:
             retorno = texto.capitalize()
+            print("*"*70)
             break
         contador -= 1
     
@@ -38,6 +39,7 @@ def get_int(mensaje:str)->int|bool:
 
         if validacion == True :
             retorno = int(numero)
+            print("*"*70)
             break
         contador -= 1
     return retorno
@@ -61,6 +63,7 @@ def get_str_tipo(mensaje_input:str, lista_tipos:list)->str|bool:
 
         if validacion == True:
             retorno = texto
+            print("*"*70)
             break
         contador -= 1
     
