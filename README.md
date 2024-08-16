@@ -37,7 +37,25 @@ los datos iniciales los lee de un archivo csv que luego se parsea a una lista de
     Esta  funcion permite ingresar los datos por terminal haciendo uso de otras funciones get que solicitan el dato, funciones que validan el tipo de dato, y una funcion que creea un diccionario.
     
     ![imagen del programa](Image_md/ingreso_datos.png)
-    ![imagen del codigo]( )
+
+    Funcion para pedir datos
+
+    ![imagen del codigo](Image_md/funcion_ingresar_dato.png)
+
+    Funcion para pedir dato
+
+    ![imagen del codigo](Image_md/funcion_get.png)
+
+    Funcion para validar dato
+
+    ![imagen del codigo](Image_md/validar_dato.png)
+
+    Funcion para crear un diccionario
+
+    ![imagen del codigo](Image_md/funcion_crear_dicc.png)
+
+
+
 
 - ### Funciones para filtra ( Opcion B, C, D ) :
     Esta funcion permite seleccionar filtros por el usuarios y genera una busqueda por los filtros elegidos. Dependiendo la opcion seleccionada en el menu principal se puede obtener la cantidad, porcentaje y el empleado de mayor edad.
@@ -52,16 +70,26 @@ los datos iniciales los lee de un archivo csv que luego se parsea a una lista de
     Muestra los todos los encuestados en formato de tabla.
 
     ![imagen de la tabla](Image_md/mostrar_tabla.png)
-    ![imagen del codigo]()
-- ###
-- ###
-- ###
+
+    Funcion para recorre la lista y mostrar cada elemneto de la lista (diccionarios)
+
+    ![imagen del codigo](Image_md/mostrar_lista.png)
+
+    Funcion para mostrar un elemento de la lista (diccionarios)
+
+    ![imagen del codigo](Image_md/mostrar_dicc.png)
+
+    Funcion para dar formato a una lista
+
+    ![imagen del codigo](Image_md/funcion_para_formatear.png)
+
 
 ## Link del proyecto
 - [Proyecto](https://github.com/carlosgithub1506/C.E.L-TECHNOLOGIES)
 
 ## Link del video
-- [Video](---)
+Video del programa en ejecucion 
+- [Video](https://youtu.be/3YiyrspHqjI)
 
 ## Contacto
 - Correo electronico carlospez.28@gmail.com
