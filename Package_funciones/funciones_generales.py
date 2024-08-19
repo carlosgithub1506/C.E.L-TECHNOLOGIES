@@ -2,7 +2,9 @@ from Package_get_validate.funciones_get import *
 from Package_funciones.funciones_mensajes import *
 
 
-
+# Crea un diccionario.
+# Parametros: 2 listas
+# Retorna: diccionario
 def crear_empleado(lista_claves:list, lista_valores:list)->dict:
 
     if len(lista_valores) > 0:
@@ -12,7 +14,9 @@ def crear_empleado(lista_claves:list, lista_valores:list)->dict:
     return diccionario
 
 
-
+# Solicita datos segun las claves de un diccionario valida los datos e ingresa el diccionario a una lista.
+# Parametros: lista de diccionarios
+# Retorna: lista
 def ingresar_datos(lista:list[dict])->list[dict]:
 
     if len(lista) > 0:
@@ -52,7 +56,9 @@ def ingresar_datos(lista:list[dict])->list[dict]:
     return lista
 
 
-
+# Filtra un lista de diccionario por clave y valor.
+# Parametros: lista, keys str, valor str, valor_ str opcional. 
+# Retorna : lista 
 def buscar_claves(lista:list, keys:str, valor:str, valor_2="")->list:
 
     lista_encontrados = []
@@ -62,6 +68,9 @@ def buscar_claves(lista:list, keys:str, valor:str, valor_2="")->list:
     return lista_encontrados
 
 
+# Filtra un lista de diccionario por clave y valor rangos.
+# Parametros: lista, keys str, rangos int. 
+# Retorna : lista 
 def buscar_claves_rangos(lista:list, keys:str, rango_1:int, rango_2:int)->list:
     lista_encontrados = []
     for dicc in lista:
@@ -70,6 +79,9 @@ def buscar_claves_rangos(lista:list, keys:str, rango_1:int, rango_2:int)->list:
     return lista_encontrados
 
 
+# convierte los datos a los valor correspondientes.
+# Parametros: lista. 
+# Retorna : lista 
 def normalizar_datos(lista:list[dict])->list:
     for dicc in lista:
         for clave in list(dicc.keys()):
@@ -78,6 +90,10 @@ def normalizar_datos(lista:list[dict])->list:
                 dicc[clave] = int(valor)
     return lista
 
+
+# Obtiene el diccionario de mayor valor segun la clave que se le pase
+# Parametro: lista de diccionarios, str
+# Retorna: diccionario
 def buscar_mayor(lista:list[dict], clave:str)->dict:
     flag_2 = True
     dicc_mayor = None
@@ -89,7 +105,9 @@ def buscar_mayor(lista:list[dict], clave:str)->dict:
 
 
 
-# obtener_claves_dict: Recibe un diccionario y retorna una lista con las claves de un diccionario | bool
+# Obtiene claves de un diccionario
+# Parametro: diccionario 
+# Retorna: lista con las claves de un diccionario | bool
 def obtener_claves_dict(diccionario:dict)->list|bool:
     retorno = False
     if type(diccionario) == dict: 
@@ -98,7 +116,9 @@ def obtener_claves_dict(diccionario:dict)->list|bool:
     return retorno
 
 
-# obtener_valores_dict recibe un diccionario y retorna una lista con los valores de un diccionario | bool
+# Obtiene los valores de un diccionario
+# Parametro: diccionario 
+# Retorna: lista con los valores de un diccionario | bool
 def obtener_valores_dict(diccionario:dict)->list | bool:
     retorno = False
     if type(diccionario) == dict: 
@@ -109,7 +129,9 @@ def obtener_valores_dict(diccionario:dict)->list | bool:
 
 
 
-# convertir_a_str: recibe una lista, convierte  cada elemento de la lista a str, lo concadena y da formato a una variable que luego retorna | puede retorna un string con un caracter repetidos 115 veces 
+# convertir_a_str: recibe una lista, convierte  cada elemento de la lista a str, lo concadena y da formato a una variable.
+# Parametros: lista y opcionalmente puede recibir un caracter
+# Retorna: string 
 
 def convertir_a_str(lista:list,caracter="*")->str:
     string = f"{caracter*115}\n"
@@ -133,6 +155,8 @@ def convertir_a_str(lista:list,caracter="*")->str:
 
 
 # mostrar_paciente: recibe un diccionario y un booleano segun el estado del booleano va hacer el formato que se va a mostrar, hace uso de otras funciones para dar formato
+# Parametros: diccionario y booleano
+# Retorna: none
 def mostrar_diccinario(empleado:dict, mostrar_un_elemento:bool) ->None:
     
     mensaje = "hubo un error"
@@ -151,7 +175,9 @@ def mostrar_diccinario(empleado:dict, mostrar_un_elemento:bool) ->None:
     print(mensaje)
 
 
-# mostrar_lista_paciente recibe una lista de diccionario la recorrre y muestra todos los elementos en formato de tabla, hace usos de otras funciones para obtener claves de un diccionario y formatear y mostrar
+# mostrar_lista_paciente recibe una lista de diccionario la recorrre y muestra todos los elementos en formato de tabla, hace usos de otras funciones para obtener claves de un diccionario y formatear y mostrar.
+# Parametros: lista de diccionarios
+# Retorna: none
 def mostrar_lista_diccionario(lista:list[dict])->None:
 
     if type(lista) == list and  len(lista) > 0:
@@ -165,6 +191,10 @@ def mostrar_lista_diccionario(lista:list[dict])->None:
         print(base_tabla)
 
 
+
+# permite seleccionar una clave de un diccionario.
+# Parametros: none
+# Retorna: str | booleano
 def elegir_clave()->bool|str:
 
     retorno = False 
@@ -195,6 +225,10 @@ def elegir_clave()->bool|str:
     return retorno
 
 
+
+# Solicita un dato y lo valida.
+# Parametros: str
+# Retorna: lista | booleano
 def elegir_valor(clave: str):
     lista_valores = []
     retorno = False 
@@ -228,8 +262,8 @@ def elegir_valor(clave: str):
                 lista_valores.append(valor)
             else:
                 imprimir("valor no valido")
-
-        seguir = input(f"Desea Ingresar otra {clave} SI/NO: ").upper()
+        if contador > 0:
+            seguir = input(f"Desea Ingresar otra {clave} SI/NO: ").upper()
         if seguir == "NO" or contador == 0:
             retorno = lista_valores
             break
@@ -240,7 +274,9 @@ def elegir_valor(clave: str):
 
 
 
-# desplega un menu con diferentes opciones para ordenar una lista de diccionarios. retorna una lista
+# Desplega un menu con diferentes opciones para filtra una lista de diccionarios.
+# Parametros: lista
+# Retorna una lista
 def mostrar_menu_ordenar(lista: list[dict])->list:
     retorno = lista
     lista_filtrada = ""

@@ -66,6 +66,10 @@ los datos iniciales los lee de un archivo csv que luego se parsea a una lista de
 
     ![imagen del resultado de la busqueda](Image_md/filtradoPorcentaje.png)
 
+    Funcion para realizar busquedas
+
+    ![imagen del resultado de la busqueda](Image_md/funcion_buscar.png)
+
 - ### Mostrar todos los empleados ( Opcion E ):
     Muestra los todos los encuestados en formato de tabla.
 
